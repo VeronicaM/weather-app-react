@@ -5,7 +5,7 @@ import WeatherDashboard from './features/weather-dashboard/WeatherDashboard.jsx'
 import Container from '@material-ui/core/Container';
 
 const App = () => {
-    return (<Container className="main-container"> 
+	return (<Container className="main-container"> 
 		<WeatherDashboard />
 	</Container>);
 };

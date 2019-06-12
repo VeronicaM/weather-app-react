@@ -15,7 +15,7 @@ const WeatherTable = (props) => {
         const timeForecastKey = `${index}_${forcastObj.temperature}`;
 
         return (
-          <TableCell align="right" key={timeForecastKey}>
+            <TableCell align="right" key={timeForecastKey}>
               <div>
                 <span> time: {forcastObj.time} </span>
                 <span> temp: {forcastObj.temperature} 
@@ -24,7 +24,7 @@ const WeatherTable = (props) => {
                 </span> 
               </div> 
           </TableCell>
-      );
+        );
     };
 
     const renderDayRow = (dayForecast, index) => {
@@ -35,11 +35,11 @@ const WeatherTable = (props) => {
         // create a unique key for this day row
         const forecastRowKey = `${index}_${dayForecast.date}`;
         const styles = {
-          backgroundColor: index%2 === 0 ? '#f1f8e9' : '#dcedc8' 
+            backgroundColor: index % 2 === 0 ? '#f1f8e9' : '#dcedc8'
         };
 
         return (
-          <TableRow key={forecastRowKey} style={styles}>
+            <TableRow key={forecastRowKey} style={styles}>
               {/* display date string as first cell followed by forcast values cells */}
               <TableCell align="right"> {dayForecast.date} </TableCell>  
               {timeCells}
@@ -56,8 +56,8 @@ const WeatherTable = (props) => {
     };
 
     const renderTable = () => {
-        if(!props.daysForecast.length) {
-          return renderEmptyState();
+        if (!props.daysForecast.length) {
+            return renderEmptyState();
         }
 
         return (

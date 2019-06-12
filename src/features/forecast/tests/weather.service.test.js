@@ -30,9 +30,9 @@
      mockAxios.get.mockImplementation(() => Promise.resolve({
          data: {}
      }));
-  	
-  	const params = { lat: 20, lon: 21 };
-    
+
+     const params = { lat: 20, lon: 21 };
+
      try {
          const forecastData = await WeatherService.getForecast(params);
      } catch (ex) {
