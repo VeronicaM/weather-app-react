@@ -2,6 +2,16 @@
 
 OpenWeather based app that displays weather information for every 3 hours across 5 days for London.  
 The app is hosted [here](https://open-weather-react-app.herokuapp.com/). 
+
+It also allows CSV forecast data input and display
+Input data in the following format datetime, temperature(K)
+For example: 
+```
+2017-07-23 09:00:00,291.12
+2017-07-23 12:00:00,292.00
+2017-07-23 15:00:00,289.34
+```
+
 ## Requirements
 
 To configure locally you will need to have installed on your machine:
@@ -43,4 +53,4 @@ To configure locally you will need to have installed on your machine:
   ##### Tradeoffs
   - In a production environment I would have probably used a backend endpoint that received the key from a process.env variable 
    to prevent it from being exposed on the client side or stored in the source code. 
-* Other things I would have liked to focus more on are design and responsiveness.  
+* Other things I would have liked to focus more on are design and responsiveness and more test coverage  
