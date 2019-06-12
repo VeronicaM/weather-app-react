@@ -3,9 +3,12 @@ import React, { Fragment, Component } from 'react';
 // Material UI Components
 import Typography from '@material-ui/core/Typography';
 
-// Components
-import WeatherTable from '../forecast/ForecastTable.jsx';
+// Material UI Components
 import CircularProgress from '@material-ui/core/CircularProgress';
+
+// Custom Components
+import WeatherTable from '../forecast/ForecastTable.jsx';
+import CSVWeatherInput from '../csv-weather-input/CSVWeatherInput.jsx';
 
 // Services
 import WeatherService from '../forecast/weather.service.js';
@@ -81,6 +84,10 @@ class WeatherDashboard extends Component {
         }
     };
 
+    updateForecastData = (daysForecast) => {
+        this.stateSetter({ daysForecast });
+    }
+
     render() {
 
         if (this.state.isLoading) {
@@ -98,6 +105,7 @@ class WeatherDashboard extends Component {
       			<Typography variant="h4" gutterBottom>
       				 Weather Forecast for the next 5 days in {this.state.cityName} 
       			</Typography>
+      			<CSVWeatherInput onCSVInputProcessed={this.updateForecastData} />
         		<WeatherTable daysForecast={this.state.daysForecast} />
       		</Fragment>
         );

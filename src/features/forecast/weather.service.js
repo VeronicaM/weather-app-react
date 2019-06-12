@@ -94,5 +94,6 @@ const processForecastData = (forecastItems) => {
 };
 
 export default {
-    getForecast
+    getForecast,
+    processForecastData
 };

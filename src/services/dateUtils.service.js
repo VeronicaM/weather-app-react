@@ -22,9 +22,15 @@ const padWithZero = (value) => {
     return `0${value}`.slice(-2);
 };
 
+const getTimestampFromString = (stringDate) => {
+	const date = new Date(stringDate); 
+	return date ? date.getTime() /1000 : 'N/A';
+};
+
 export default {
     getDateFromTimestamp,
     getDateString,
     getTimeFromTimestamp,
+    getTimestampFromString,
     padWithZero
 }
